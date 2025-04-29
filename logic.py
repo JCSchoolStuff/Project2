@@ -30,8 +30,12 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.__alphabet = 1
         elif self.az09_radio.isChecked():
             self.__alphabet = 2
-        else:
+        elif self.az09_radio_2.isChecked():
             self.__alphabet = 3
+        elif self.az09_radio_3.isChecked():
+            self.__alphabet = 4
+        else:
+            self.__alphabet = 5
 
         try:
             if self.__alphabet == 1:
@@ -81,6 +85,60 @@ class Logic(QMainWindow, Ui_MainWindow):
                         self.__shifttext += chr(index)
                     else:
                         self.__shifttext += letter
+            elif self.__alphabet == 3:
+                for letter in self.__plaintext:
+                    if letter.isupper():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 91:
+                                index = 48
+                            elif index == 58:
+                                index = 65
+                        self.__shifttext += chr(index)
+                    elif letter.islower():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 123:
+                                index = 48
+                            elif index == 58:
+                                index = 97
+                        self.__shifttext += chr(index)
+                    elif letter.isdigit():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 58:
+                                index = 65
+                            if index == 91:
+                                index = 48
+                        self.__shifttext += chr(index)
+                    else:
+                        self.__shifttext += letter
+            elif self.__alphabet == 4:
+                for letter in self.__plaintext:
+                    if letter.isupper():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 91:
+                                index = 65
+                        self.__shifttext += chr(index)
+                    elif letter.islower():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 123:
+                                index = 97
+                        self.__shifttext += chr(index)
+                    elif letter.isdigit():
+                        index = ord(letter)
+                        for i in range(int(self.__shift_num)):
+                            index += 1
+                            if index == 58:
+                                index = 48
+                        self.__shifttext += chr(index)
             else:
                 for letter in self.__plaintext:
                     index = ord(letter)
