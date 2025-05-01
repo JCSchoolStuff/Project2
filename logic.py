@@ -135,6 +135,8 @@ class Logic(QMainWindow, Ui_MainWindow):
                             if index == 58:
                                 index = 48
                         self.__shifttext += chr(index)
+                    else:
+                        self.__shifttext += letter
             else:
                 for letter in self.__plaintext:
                     index = ord(letter)
@@ -144,7 +146,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                             index = 32
                     self.__shifttext += chr(index)
 
-            with open('cipher.txt', 'w') as file:
+            with open('cipher.txt', 'a') as file:
                 file.write(self.__shifttext)
 
             self.ciphertext.setText(self.__shifttext)
