@@ -6,7 +6,7 @@ def main() -> None:
     """
     application = QApplication([])
     window = Logic()
-    window.setWindowTitle("Project 1")
+    window.setWindowTitle("Project 2")
     window.show()
     application.exec()
 

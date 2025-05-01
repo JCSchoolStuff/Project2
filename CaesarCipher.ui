@@ -82,7 +82,7 @@
    <widget class="QRadioButton" name="az09_radio">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>160</x>
       <y>230</y>
       <width>111</width>
       <height>20</height>
@@ -192,20 +192,20 @@
    <widget class="QRadioButton" name="az09_radio_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>330</x>
       <y>230</y>
-      <width>151</width>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>a-z to 0-9, A-Z to 0-9</string>
+     <string>a-z to 0-9, A-Z</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="az09_radio_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>510</x>
       <y>230</y>
       <width>111</width>
       <height>20</height>

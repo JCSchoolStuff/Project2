@@ -92,8 +92,6 @@ class Logic(QMainWindow, Ui_MainWindow):
                         for i in range(int(self.__shift_num)):
                             index += 1
                             if index == 91:
-                                index = 48
-                            elif index == 58:
                                 index = 65
                         self.__shifttext += chr(index)
                     elif letter.islower():
@@ -110,9 +108,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                         for i in range(int(self.__shift_num)):
                             index += 1
                             if index == 58:
-                                index = 65
-                            if index == 91:
-                                index = 48
+                                index = 97
                         self.__shifttext += chr(index)
                     else:
                         self.__shifttext += letter
