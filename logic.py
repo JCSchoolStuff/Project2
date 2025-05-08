@@ -147,7 +147,17 @@ class Logic(QMainWindow, Ui_MainWindow):
                     self.__shifttext += chr(index)
 
             with open('cipher.txt', 'a') as file:
-                file.write(self.__shifttext)
+                if self.__alphabet == 1:
+                    file.write(f'a-z, A-Z, shift {self.__shift_num}\n')
+                elif self.__alphabet == 2:
+                    file.write(f'a-z, A-Z to 0-9, shift {self.__shift_num}\n')
+                elif self.__alphabet == 3:
+                    file.write(f'a-z to 0-9, A-Z, shift {self.__shift_num}\n')
+                elif self.__alphabet == 4:
+                    file.write(f'a-z, A-Z, 0-9, shift {self.__shift_num}\n')
+                else:
+                    file.write(f'ASCII (32-126), shift {self.__shift_num}\n')
+                file.write(f'{self.__shifttext}\n')
 
             self.ciphertext.setText(self.__shifttext)
 
